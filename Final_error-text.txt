@@ -1,0 +1,128 @@
+[2025-08-10 16:12:43,092] ERROR in app: Exception on /_dash-layout [GET]
+Traceback (most recent call last):
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/dash/dash.py", line 851, in serve_layout
+    to_json(layout),
+    ^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/dash/_utils.py", line 28, in to_json
+    return to_json_plotly(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/plotly/io/_json.py", line 142, in to_json_plotly
+    json.dumps(plotly_object, cls=PlotlyJSONEncoder, **opts), _swap_json
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/_plotly_utils/utils.py", line 162, in encode
+    encoded_o = super(PlotlyJSONEncoder, self).encode(o)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/_plotly_utils/utils.py", line 239, in default
+    return _json.JSONEncoder.default(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type set is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 809, in handle_user_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/dash/_jupyter.py", line 462, in _wrap_errors
+    ipytb = FormattedTB(
+            ^^^^^^^^^^^^
+TypeError: FormattedTB.__init__() got an unexpected keyword argument 'color_scheme'
+Error on request:
+Traceback (most recent call last):
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/dash/dash.py", line 851, in serve_layout
+    to_json(layout),
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/dash/_utils.py", line 28, in to_json
+    return to_json_plotly(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/plotly/io/_json.py", line 142, in to_json_plotly
+    json.dumps(plotly_object, cls=PlotlyJSONEncoder, **opts), _swap_json
+  File "/usr/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/_plotly_utils/utils.py", line 162, in encode
+    encoded_o = super(PlotlyJSONEncoder, self).encode(o)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/_plotly_utils/utils.py", line 239, in default
+    return _json.JSONEncoder.default(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type set is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 809, in handle_user_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/dash/_jupyter.py", line 462, in _wrap_errors
+    ipytb = FormattedTB(
+            ^^^^^^^^^^^^
+TypeError: FormattedTB.__init__() got an unexpected keyword argument 'color_scheme'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/flask/app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/dash/_jupyter.py", line 453, in _wrap_errors
+    skip = _get_skip(error) if dev_tools_prune_errors else 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gpuchm8/Analysis/lib/python3.12/site-packages/dash/_jupyter.py", line 47, in _get_skip
+    while tb.tb_next is not None:
+          ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'tb_next'
+
